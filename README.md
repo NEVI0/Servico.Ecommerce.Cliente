@@ -43,3 +43,39 @@ Contém a lógica de negócio.
   - **Métodos:**
     - `GetClienteById(int id)`: Busca um cliente pelo ID.
     - `CreateCliente(ClienteDTO dto)`: Cria um novo cliente com base no DTO.
+
+### 5. *Infraestrutura*
+Gerencia a injeção de dependências e o acesso ao contexto de dados.
+
+- *GeradorDeServicos.cs*
+  - Fornece o contexto do banco de dados.
+
+### 6. *Migrations*
+Configurações do banco de dados geradas pelo Entity Framework.
+
+- *20241125005001_Cliente.cs*: Define a tabela Cliente e seus campos.
+- *DataContextModelSnapshot.cs*: Captura o estado atual do modelo de banco de dados.
+
+---
+
+## Banco de Dados
+O sistema utiliza *SQLite* para armazenamento de dados. A tabela principal é a Cliente, que armazena as informações de identificação, nome, e-mail e CPF dos clientes.
+
+---
+
+## Configuração do Ambiente
+
+### 1. *Configurações de Inicialização*
+Definidas no arquivo launchSettings.json:
+- *URLs*:
+  - HTTP: http://localhost:5297
+  - HTTPS: https://localhost:7087
+
+### 2. *Execução*
+1. Clone o repositório.
+2. Certifique-se de que o .NET SDK está instalado.
+3. Execute os comandos:
+   ```bash
+   - dotnet restore
+   - dotnet ef database update
+   - dotnet run
